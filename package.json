@@ -1,0 +1,26 @@
+{
+  "name": "react-101",
+  "version": "1.0.0",
+  "description": "This is react-101 ",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumasubbu/React-101.git"
+  },
+  "author": "Suma Subbu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sumasubbu/React-101/issues"
+  },
+  "homepage": "https://github.com/sumasubbu/React-101#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
