@@ -31,6 +31,23 @@ CDN -
 - for security reasons, browsers do not allow resource sharing between different origins. fetch() and XMLHttpRequest() follow same-origin resource sharing policy. To access resources from other origins, CORS is needed.
 - The browsers make a pre-flight request to the server hosting the cross-origin resource to check if the server allows the actual request. The browser sends headers that indicate HTTP method and headers that will be used in the actual request.
 
+# What is the difference between React and ReactDOM (React.createElement and ReactDOM.createRoot) in the code?
+- React here refers to the core react library, which has tools and methods by which component based user interfaces are built. These elements are created as objects, which are then rendered as HTML elements in the ReactDOM.
+- ReactDOM is the mediator between the actual browser DOM and react's virtual DOM. It renders the components created using core react library in the DOM and perform DOM manipulation.
+- The files are available separately because the react components built using core react library can be rendered in different interfaces such as web (ReactDOM), mobile(ReactNative),Virtual Reality (ReactVR) etc. Core react is not platform dependent, this is what makes it so versatile.
+
+# What is the difference between react.development.js and react.production.js files via CDN? 
+react.development.js
+- core react file (which is developed in pure JS) for developers to use in dev mode
+- code is readable, larger in size
+
+react.production.js 
+- This is the core react file for production mode
+- code is compressed and minified, size is reduced to enhance performance in end-uder devices.
+
+# what is async and defer?
+
+
 # Parcel Bundler -
 - creates a dev build
 - creates a localserver
