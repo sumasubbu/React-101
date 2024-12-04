@@ -1,5 +1,7 @@
 # React 101 codes
 
+# Lesson-1
+
 # What is Emmet?
 - A plug-in for text editors that allows developers to code faster by typing short expressions which are then expanded into boiler-plate code.
 - It has short versions for creating HTML boilerplate code, to create elements with ids and classes, to create nested/sibling elements etc
@@ -9,16 +11,17 @@
 - A framework provides a structure for the program. These are also written by 3rd parties to optimise the performance of the application. The control is inverted here, ie , it lies with the framework, where it tells the developer where to write the code and the framework decides when to call the code.
 
 # What is CDN? why do we use it?
--  CDN (content Delivery/distribution network) contains interconnected servers, which are geographically closer to the users, large files like videos, images are loaded faster if served from cdn servers. data has to travel across the internet travelling long physical distances. this can increase the time taken to load the web pages 
-reduces latency
-reduces bandwidth cinsumption
-increases content availability - if a server crashes, nearest cdn will replace the server.
-intermediary servers- to handle communication requests from users and reduce the bandwidth costs, original server is not bombarded by communication requests.
-handle DDoS attacks - it distributes network traffic across intermediary servers and original server is not affected.
+-  CDN (content Delivery/distribution network) contains interconnected servers, which are geographically closer to the users, large files like videos, images are loaded faster if served from cdn servers. The data has to travel across the internet travelling long physical distances which increases the time taken to load the web pages.
+CDN - 
+- reduces latency
+- reduces bandwidth consumption
+- increases content availability - if a server crashes, nearest cdn will replace the server.
+- has intermediary servers to handle communication requests from users and reduce the bandwidth costs, original server is not bombarded by communication requests.
+- handles DDoS attacks by distributing the network traffic across intermediary servers thereby original server is not affected.
 
 # why is react known as react? 
 
--react is a JS library built to help developers react to changing state and data in the application and update the user interface without reloading the entire page.
+- react is a JS library built to help developers react to changing state and data in the application and update the user interface without reloading the entire page.
 
 # What is crossorigin in <script> tag?
 - crossorigin attribute is used to define how resources from servers in other origins are accessed. Here the origin refers to domain, port, sub-domain, security protocol(https/http) etc
