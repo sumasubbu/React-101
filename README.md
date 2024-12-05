@@ -46,6 +46,44 @@ react.production.js
 - code is compressed and minified, size is reduced to enhance performance in end-uder devices.
 
 # what is async and defer?
+async in functions
+- it is a keyword used before function definition.
+- async functions will always return a promise.
+
+const p = new promise((resolve,reject)=>{
+  resolve('promise resolved')
+})
+
+ async function getData(){
+  return p
+ }
+  const data = getData() //this data now contains promise that is explcitly returned
+  data.then((response)=>console.log(response))
+
+- if any other value is returned by the function instead of a promise, the value is wrapped inside a promise and then returned.
+
+eg: async function getData(){
+  return "async data"
+}
+const data = getData() // data now contains a promise
+data.then((response)=>console.log(response))
+
+async and defer in <script> tag 
+- when a web page is loaded, html is parsed and scripts are fetched and executed line by line.
+- async and defer are boolean attributes that are used in script tag to load the scripts efficiently.
+ 
+ loading a script without async or defer
+ - html get parsed until the script tag occurs in the html content. html parsing is halted, scripts are fetched and at the same time executed line by line. After the scripts are completely executed, only then the html parsing is resumed.
+
+ loading script with async attribute 
+ - html code is parsed and paralelly the scripts are fetched. Once all scripts are fetched, parsing is resumed and the scripts are executed completely. Only after this the html code parsing is resumed.
+ - async does not maintain the order of execution of the scripts. If there are scripts which do not interact with the DOM like scripts that load images or videos can benefit from async.
+
+ loading scripts with defer attribute 
+ - html gets parsed and parallelly the scripts are fetched, these scripts are not executed until the entire html code gets parsed (loaded) completely. After the parsing is complete the scripts are executed.
+ - Maintains the order of execution of the scripts.
+ - useful in situations where the scripts interact with the DOM like adding event listener etc and in situation where scripts are modular in nature.
+ - defer is the best of both worlds 
 
 
 # Parcel Bundler -
