@@ -5,7 +5,7 @@
 ### What is Emmet?
 - A plug-in for text editors that allows developers to code faster by typing short expressions which are then expanded into boiler-plate code.
 - It has short versions for creating HTML boilerplate code, to create elements with ids and classes, to create nested/sibling elements etc
-  visit https://medium.com/@kartik2406/web-development-with-vs-code-part-1-emmet-6af80f0f630c
+Refer this medium article on emmet and the most common shortcuts used - https://medium.com/@kartik2406/web-development-with-vs-code-part-1-emmet-6af80f0f630c
 
 ### What is the difference between a library and framework?
 - A library contains pre-written code snippets that are written by third parties  which can be used multiple times anywhere in the program to get certain tasks done. The control lies with the developer, ie, the developer decides where these code snippets can be plugged into the application code and tells the application when to call it.
