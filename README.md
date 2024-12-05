@@ -92,6 +92,16 @@ async and defer in <script> tag
 
 ## Chapter 2
 
+### What is npm?
+- It is a package manager used to download dependencies/packages to be used in the code.
+- it is a repository for all packages
+- to add npm in the app,
+ ```
+ npm init
+ ```
+ this command adds package.json file in the app's directory, which has information regarding the version and configuration of the packages used in the app.
+
+ 
 # Parcel Bundler -
 - creates a dev build
 - creates a localserver
