@@ -286,16 +286,16 @@ Tree Shaking - removes any unwanted code while building the app for production, 
 this means the web app will run in the last 2 versions of all the browsers that are currently available
 - visit https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z for more information regarding browserslist
 
-### difference between ^ and ~ ?
+### Difference between ^ and ~ ?
 - ^ caret
- - ^ tells npm to update to the next available patch of the version from npm registry while installing for the first time in the project
+ ^ tells npm to update to the next available patch of the version from npm registry while installing for the first time in the project
  ```
  "dependencies": {
   "parcel": "^1.0.0"
  }
  ```
 - ~ tilda
- - ~ tells npm to update the dependency to the next major version available in npm registry while installing it initially in the project.
+ ~ tells npm to update the dependency to the next major version available in npm registry while installing it initially in the project.
  ```
  "dependencies": {
   "parcel":"~1.0.0"
