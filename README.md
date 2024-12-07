@@ -226,9 +226,85 @@ Tree Shaking - removes any unwanted code while building the app for production, 
 ### What is the difference between package.json and package-lock.json?
 
 - package.json
-- a metafile that describes the packages installed, its configuration and version
-- it contains information about the project, its author, version, description etc
--
+ - a metafile that describes the packages installed, its configuration and version
+ - it contains information regarding the direct dependencies, or the packages that the developer has installed
+ - it does not contain information about the transitive dependencies
+ - it allows the developers to write CLI alias commands as "scripts" which then helps them to run commands in an easier and faster manner
+ - it enables the developers to start the project by defining the entry point, run scripts, install dependencies, publish to npm registry etc
+ - it contains information about the project, its author, version, description etc
+ - 
+ - when a developer installs the folder containing the source code, the dependencies can be downloaded using npm if package.json is present in the code directory
+ command to install packages using package.json
+ ```
+ npm install
+ ```
+ - the dependencies installed using the above command will be stored in node_modules folder in the root of the project
+ - this file needs to be committed to github repo
+
+- package-lock.json
+ - describes the exact version of the dependencies used in the project
+ - it contains information regarding versions of the transitive dependencies, which is not present in package.json
+ - this guarantees the dependencies for other developers of the project or prod releases
+ - also guarantees all the subsequent installations of the project will have the exact version locked in package-lock.json
+ - it allows the developers to test different versions of dependencies using package.json while using the exact version to run the project
+ - it regenerates the file whenever changes are made to package.json file
+ - when devDependencies are installed npm automatically creates a package-lock.json file  
+
+- While configuring the project initially, when 'npm install' is run a node_modules folder and package-lock.json file is created.
+- if ^ symbol is present before the version of dependencies mentioned in package.json, eg: ^1.0.0 the next available patch for the version of the dependencies, if available, are installed from npm registry and it is locked in package-lock.json
+- any subsequent npm install commands run after this will not update the versions (even if ^ symbol is present), because package-lock.json locks the version of the dependencies to one that was initially installed. npm will look for package-lock.json here after for any further dependency re-installations.
+- if the project/app is already installed, even if new versions of the packages used in the project is available in npm registry, npm will not automatically update to these patches/versions.
+- updation of the packages will only happen if node_modules folder and package-lock.json file is not present.
+
+### Why should I not modify package-lock.json?
+- package-lock.json locks the exact version of the dependency tree (includes transitive dependencies) of the project
+- this ensures the developers working on the project or the prod releases will use the exact version of the dependencies which are initially used
+- if it is modified, the app will not work consistently across the devices the app. If a developer pulls the changes and then runs 'npm install' npm now installs the modified version of the dependencies.
+- To make any modifications it should always be done in package.json
+
+### What is node_modules? Is it a good idea to push it on git?
+- node_modules is a folder that is automatically generated at the root of the project directory by npm when npm install command is run for the first time while installing the project
+- it contains all the dependencies that are installed from package.json and its sub-dependencies.
+- it is bulky in nature and can be easily installed in any system from npm registry if package.json file is present
+- it is not a good idea to push it to github repository as it can easily be regenerated in any system
+
+### What is the 'dist' folder?
+- it contains compressed, minified and optimized HTML, css and JS code
+- it also contains compiled modules that may or may not be used with other systems
+- when bundler builds for development or production, the code is minified and stored in dist folder
+- bundler now uses these dist files to update the browser pages, not index.html or App.js
+- if production build is made, 3 files one each for html, css and JS containing minified code is generated in dist
+
+### What is 'browserslist'?
+- it is an object that is defined in package.json
+- specifies the versions of the browsers the web app is compatible with
+```
+"browserslist": [
+  "last 2 versions"
+]
+```
+this means the web app will run in the last 2 versions of all the browsers that are currently available
+- visit https://browserslist.dev/?q=bGFzdCAyIHZlcnNpb25z for more information regarding browserslist
+
+### difference between ^ and ~ ?
+- ^ caret
+ - ^ tells npm to update to the next available patch of the version from npm registry while installing for the first time in the project
+ ```
+ "dependencies": {
+  "parcel": "^1.0.0"
+ }
+ ```
+- ~ tilda
+ - ~ tells npm to update the dependency to the next major version available in npm registry while installing it initially in the project.
+ ```
+ "dependencies": {
+  "parcel":"~1.0.0"
+ }
+ ```
+Best practice is to use ^ symbol 
+
+
+
 
 # Parcel Bundler -
 
