@@ -5,8 +5,9 @@
 ### What is Emmet?
 - A plug-in for text editors that allows developers to code faster by typing short expressions which are then expanded into boiler-plate code.
 - It has short versions for creating HTML boilerplate code, to create elements with ids and classes, to create nested/sibling elements etc
+Refer this medium article on emmet and the most common shortcuts used - https://medium.com/@kartik2406/web-development-with-vs-code-part-1-emmet-6af80f0f630c
 
-### what is the difference between a library and framework?
+### What is the difference between a library and framework?
 - A library contains pre-written code snippets that are written by third parties  which can be used multiple times anywhere in the program to get certain tasks done. The control lies with the developer, ie, the developer decides where these code snippets can be plugged into the application code and tells the application when to call it.
 - A framework provides a structure for the program. These are also written by 3rd parties to optimise the performance of the application. The control is inverted here, ie , it lies with the framework, where it tells the developer where to write the code and the framework decides when to call the code.
 
@@ -19,7 +20,7 @@ CDN -
 - has intermediary servers to handle communication requests from users and reduce the bandwidth costs, original server is not bombarded by communication requests.
 - handles DDoS attacks by distributing the network traffic across intermediary servers thereby original server is not affected.
 
-### why is react known as react? 
+### Why is react known as react? 
 
 - react is a JS library built to help developers react to changing state and data in the application and update the user interface without reloading the entire page.
 
@@ -45,7 +46,7 @@ react.production.js
 - This is the core react file for production mode
 - code is compressed and minified, size is reduced to enhance performance in end-uder devices.
 
-### what is async and defer?
+### What is async and defer?
 async in functions
 - it is a keyword used before function definition.
 - async functions will always return a promise.
@@ -64,7 +65,6 @@ const p = new promise((resolve,reject)=>{
 
 - if any other value is returned by the function instead of a promise, the value is wrapped inside a promise and then returned.
 
-eg: 
 ```
 async function getData(){
   return "async data"
