@@ -303,6 +303,63 @@ this means the web app will run in the last 2 versions of all the browsers that 
  ```
 Best practice is to use ^ symbol 
 
+### Steps to run the app using libraries (react,reactDOM, parcel)
+- install npm into the repo 
+```
+npm init
+```
+- install react and reactDOM libraries from npm registry
+``` 
+npm install react
+or 
+npm i react
+```
+```
+npm install react-dom
+```
+- remove CDN links from index.html
+- to use the react and react-dom code present in node_modules into the app import them in app.js. JS will not understand what 'React' in 'React.createElement()' and 'ReactDOM' in 'ReactDOM.createRoot()' is without the imports.
+
+```
+import React from react
+```
+```
+import ReactDOM from react-dom/client
+```
+
+- install parcel bundler
+```
+npm install parcel
+```
+- start the app using parcel
+```
+npx parcel index.html
+```
+This will run the app in development mode
+```
+npx parcel build index.html
+```
+The above command will build the app for production
+- to run these commands using npm scripts, go to package.json and add to scripts
+"scripts": {
+  "start": "parcel imdex.html",
+  "build": "parcel build index.html"
+}
+now the app can be run using npm
+```
+npm run start
+or
+npm run
+```
+```
+npm run build
+```
+- add files and folders that need not be tracked/ committed to github repo to .gitignore file
+- node_modules, dist and .parcel-cache have to added to .gitignore file as these folders and files can easily be generated when the app is fetched from github
+- configure "browserslist" in package.json to specify the browsers and the versions that are compatible with the app
+- play around with dev build and prod build and see how the code changes in dist and .parcel-cache
+
+
 
 
 
