@@ -359,6 +359,72 @@ npm run build
 - configure "browserslist" in package.json to specify the browsers and the versions that are compatible with the app
 - play around with dev build and prod build and see how the code changes in dist and .parcel-cache
 
+## Chapter 3
+
+### What is jsx? What are the benefits of JSX?
+- it is a html like syntax developed by facebook, to code using react in an easy and non-cumbersome manner
+- jsx is not html in Javascript
+- nesting elements using core react, ie, React.createElement is cumbersome. It involves writing multiple lines of code which is often confusing to read
+- to make development using react easy, jsx was developed.
+- code written using jsx seems familiar to developers as it resembles html syntax
+- earlier web apps had content, styling and logic separately in different files (html,css and JS files)
+- but in modern web apps JS logic changes the html content. jsx allows developers to write html content and the logic repsonsible for editing the content in the same component
+
+### React.createElement vs jsx
+- React.createElement
+ - it is an api provided by core react library
+ - it is used to create react elements - abstraction over real DOM elements - which core react can process
+ - when React.createElement() function calls are made, react elements are created which are JS objects
+ - React has a virtual DOM which is a lightweight representation of actual DOM
+ - React compares new virtual DOM with its previous virtual DOM and identifies the UI that is changed dynamically by changes in props or state
+ - React uses the ReactDOM render method to update the real DOM with the changes
+ - ReactDOM.render() method translates the react elements created using React.createElement() into real HTML elements and renders onto the real DOM.
+ - Real DOM can only understand html,css and JS, not react React.createElement()
+
+- JSX
+ - stands for Javascript XML
+ - it is a syntax extension for Javascript, resembles html, integrates JS expressions directly within the markup by enclosing them within {}
+ - It is an html like syntax which makes creating react elements concise and easy to read
+ - simplfies the process of creating UI components
+ - it was introduced as it is similar to html syntax which the developers are already familiar with, which makes it easier to learn
+ - nesting elements is easy, just like html element nesting
+ - creating elements using React.createElements() made it easier to introduce bugs as it is cumbersome to code
+ - react does not understand JSX. It needs a transpiler to convert the code written using JSX to create react elements into React.createElement() api calls
+ - Babel is the transpiler Parcel uses.
+ - Parcel installs a package called Babel to transpile jsx code
+ - babel translates jsx code to React.createElement() method calls, which then creates react elements which are JS objects and these are rendered as HTML elements in the real DOM 
+ - it undergoes react's validation process while rendering data to prevent cross site scripting attacks
+ - multi line jsx needs to be wrapped in () to tell babel the start and end of jsx
+ ```
+ const jsxHeading = (
+  <h1>
+   hello world!
+  </h1> 
+ );
+ ```
+ - custom react components are represented as tags <CustomComponent/> inside jsx
+ - JS code and expressions are represented within {} inside jsx
+ ```
+ const greet = (
+  {jsxHeading}
+  <h1> Such a beautiful day! </h1>
+ )
+ ```
+ since jsxHeading creates a react element which is ultimately a JS object, it needs to be enclosed within {} inside greet element as all JS needs to wrapped in {}
+ - uses camelCase for attributes, eg: className = "heading"
+ - inline styles are written as objects with camelcase property names
+ ```
+ const style = { color:'blue', fontSize:'20px'}
+ const element = (
+ <span style = { style }> 
+  text 
+ </span>
+ );
+ ```
+ style is a JS object which should be wrapped in {} inside jsx
+ 
+
+
 
 
 
