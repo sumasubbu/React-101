@@ -389,7 +389,7 @@ npm run build
  - it was introduced as it is similar to html syntax which the developers are already familiar with, which makes it easier to learn
  - nesting elements is easy, just like html element nesting
  - creating elements using React.createElements() made it easier to introduce bugs as it is cumbersome to code
- - react does not understand JSX. It needs a transpiler to convert the code written using JSX to create react elements into React.createElement() api calls
+ - react does not understand JSX. It needs a transpiler to convert the code written using JSX to create react elements using React.createElement() api calls
  - Babel is the transpiler Parcel uses.
  - Parcel installs a package called Babel to transpile jsx code
  - babel translates jsx code to React.createElement() method calls, which then creates react elements which are JS objects and these are rendered as HTML elements in the real DOM 
@@ -402,7 +402,7 @@ npm run build
   </h1> 
  );
  ```
- - custom react components are represented as tags <CustomComponent/> inside jsx
+ - custom react components are represented as tags eg: <CustomComponent/>, inside jsx
  - JS code and expressions are represented within {} inside jsx
  ```
  const greet = (
@@ -422,7 +422,105 @@ npm run build
  );
  ```
  style is a JS object which should be wrapped in {} inside jsx
- 
+
+### Benefits of JSX
+- very similar to html markup syntax, so developers find it easy to learn
+- it makes the code concise
+- developers can integrate JS code inside the markup, so the content and the logic stays in the same place
+- nesting elements is easy 
+- it is dynamic and works hand in hand with JS to build components
+- it follows JS validation while rendering data and prevents cross site scripting attacks
+
+### Behind the scenes of JSX
+- JSX is neither pure JS nor pure HTMl
+- it is an html like syntax used to build react components
+- browsers do not understand JSX. it only understands html, css and JS
+- a transpiler is needed to translate jsx code to JS code
+- jsx elements are transpiled to make React.createElement() method calls, which creates react elements. These react elements are JS objects behind the scenes. These JS objects are used to update the virtual DOM. After the process of "reconciliation", react using ReactDOM.render() method renders html elements in real DOM
+
+### The role of Babel and parcel in JSX
+- when react code is written using jsx, a transpiler is required to translate the jsx code to JS which the browser understands
+- Parcel installs a transpiler as an npm package. Commonly used transpiler is Babel 
+- As soon as the code is written and saved, Parcel uses babel to translate the code to the code that browser understands, which is JS, html and css
+- jsx mainly helps the developers code efficiently and in a concise manner
+
+### What are components?
+- components are reuable piece of code that has structure(html), style(css) and logic(JS) of a portion of the UI
+- components break down complex UI into smaller, manageable and independent pieces
+- components are the heart of react library. Everything is react is a component
+- components must return a single react element. If multiple react elements are to be returned wrap them in a parent <div> or <> (empty fragment to avoid adding extra DOM nodes) or <Fragment> (needs to imported) 
+- components can return a string or number (these will be rendered in dom as text nodes) or null (if nothing is rendered) or arrays (array of elements can also be returned) or another component.
+- components' name should always start with capital letters
+- There are 2 types of components-
+ - Functional components 
+  - This is the new way of creating components in react
+  - These components are basically JS functions that accept props as arguments and return react elements (in jsx) or any supported values
+  - these are simple and stateless by default
+
+  functional component with explicit return
+  ```
+  const Greet = ()=>{
+    const num = 1000;
+    return (
+      <h1>Hello, Your number is {num}!</h1>
+    )
+  }
+  ```
+  functional component with implicit return
+  ```
+  const Greet = (props)=>(
+    <h1>Hello {props.name}</h1>
+  )
+  <Greet name="Suma" />
+  ```
+- Class Components
+ - Older way of writing components
+ - Based on JS classes, extends React.Component
+ - They have a render method to return the elements 
+ - They can hold state and lifecycle methods
+ ```
+ class Greet extends React.Component {
+  render(){
+    return (
+      <h1>Hello {this.props.name}!</h1>
+    )
+  }
+ }
+ <Greet name="Suma" />
+ ```
+
+### Component composition
+- Rendering one component inside another is called component composition
+- components can be rendered in 3 ways inside another component
+ - self closing tag <MyComponent/>
+ - open and close tags <MyComponent></MyComponent>
+ - function call {MyComponent()}
+```
+const Title = ()=>(
+  <h2>My title goes here</h2>
+)
+const Greet = () => (
+  <div>
+  <h1>Hello!<h1>
+  <Title/>
+  </div>
+)
+ or
+const Greet = () => (
+  <div>
+  <h1>Hello!<h1>
+  <Title></Title>
+  </div>
+)
+or
+const Greet = () => (
+  <div>
+  <h1>Hello!<h1>
+  {Title()}
+  </div>
+)
+```
+
 
 
 
