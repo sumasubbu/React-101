@@ -505,14 +505,18 @@ const Greet = () => (
   <Title/>
   </div>
 )
+```
  or
+ ```
 const Greet = () => (
   <div>
   <h1>Hello!<h1>
   <Title></Title>
   </div>
 )
+```
 or
+```
 const Greet = () => (
   <div>
   <h1>Hello!<h1>
