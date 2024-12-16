@@ -2,8 +2,10 @@
   "name": "react-101",
   "version": "1.0.0",
   "description": "This is react-101 ",
-  "main": "index.js",
+  
   "scripts": {
+    "start": "parcel index.html",
+    "build":"parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -17,10 +19,14 @@
   },
   "homepage": "https://github.com/sumasubbu/React-101#readme",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
   },
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
-  }
+  },
+  "browserslist":[
+    "last 2 versions"
+  ]
 }

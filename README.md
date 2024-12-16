@@ -534,6 +534,34 @@ const Greet = () => (
   </div>
 )
 ```
+### Chapter 3 Assignment notes
+Create a header component from scratch using functional components with JSX
+- add a logo on left
+- add a search bar in the middle
+- user icon to the right
+- add CSS
+
+- I created a functional component by name 'Header'. This component returns a JSX which consists of header structure in html
+- the logo is an image downloaded from the internet. This image is wrapped in <a> tag with the redirect set to homepage (href="#")
+- user icon is a font-awesome icon where font-awesome library is added via cdn link 
+- added a CSS file and imported it so the css rules can be applied to html written inside Header component
+
+
+My learnings:
+- I had trouble rendering the logo image onto the website. Even though the image was present in the project folder under "asset", the app was not able to render it.
+- I researched on different methods of rendering images
+visit article- https://cloudinary.com/guides/web-performance/5-ways-to-import-images-in-react-bonus-automation-method#:~:text=The%20most%20straightforward%20way%20to,myImage%20from%20'.%2Fpath_to_your_image.
+
+- I imported the image from the asset folder as "image" 
+```
+import image from "./path-to-image.png"
+```
+- to use this image in the <img> tag, set "src" attribute to "image"
+src={image}, within {} as 'image' is a JS variable
+- now the app renders the image with no issues
+
+
+
 
 
 
