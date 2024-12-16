@@ -550,7 +550,7 @@ Create a header component from scratch using functional components with JSX
 My learnings:
 - I had trouble rendering the logo image onto the website. Even though the image was present in the project folder under "asset", the app was not able to render it.
 - I researched on different methods of rendering images
-visit article- https://cloudinary.com/guides/web-performance/5-ways-to-import-images-in-react-bonus-automation-method#:~:text=The%20most%20straightforward%20way%20to,myImage%20from%20'.%2Fpath_to_your_image.
+- visit article https://cloudinary.com/guides/web-performance/5-ways-to-import-images-in-react-bonus-automation-method#:~:text=The%20most%20straightforward%20way%20to,myImage%20from%20'.%2Fpath_to_your_image.
 
 - I imported the image from the asset folder as "image" 
 ```
