@@ -587,3 +587,60 @@ src={image}, within {} as 'image' is a JS variable
 - can also host app on https
 - Tree shaking - remove unused code
 - different builds for dev and production
+
+## Chapter 4
+
+### Is JSX mandatory for React?
+- No, it isn't mandatory as React code can be written using React.createElement() method calls
+- JSX  stands for Javascript XML is HTML/XML like syntax using which HTML,CSS and JS can all be written in the same place.
+- It enhances readability of the code as it is very similar to HTML
+- Nesting react elements using React.createElement() needs multiple lines of complex code. Nesting using JSX is easy, as it resembles HTML element nesting.
+- React needs a transpiler like Babel to understand JSX.
+
+### Is ES6 mandatory for React?
+- No it isn't mandatory to use ES6
+- Modern websites use ES6+ features in React to create components and in JS logic
+- Functional components are based on JS arrow functions which is a ES6 feature 
+- Class components are based off of JS ES6 feature of classes
+- Arrow functions, destructuring, rest and spread operators, template literals, modules and import/export are all used in mordern react code 
+- Without ES6 components in react are created using create-react-class method. This makes the code more verbose and less readable.
+
+### How are comments written inside JSX?
+- Since JSX is a combination of HTML and JS, comments are wrapped in {/*comments*/}
+- for multi-line comments 
+```
+{/* line-1
+line-2
+line-3
+*/}
+```
+
+### Difference between <React.Fragment></React.Fragment> and <></> ?
+- Both are useful to group elements and avoid adding extra DOM nodes
+- <React.Fragment></React.Fragment> is used in situations where key or any attribute has to be passed while rendering
+- verbose in nature
+- used while rendering lists
+```
+const seeds = ['flax','pumpkin','sesame']
+...
+return(
+  
+  {seeds.map((seed,index) => 
+  <React.Fragment key={index}>
+  <h1>{seed}</h1>
+  </React.Fragment>
+  )}
+)
+```
+- <></> is a shorthand for <React.Fragment>, used in situations where no key or attributes are passed while rendering
+- concise syntax
+- cannot be used while rendering lists
+```
+...
+return(
+<>
+<h1> hello world</h1>
+<h2> Welcome!</h2>
+</>
+)
+
